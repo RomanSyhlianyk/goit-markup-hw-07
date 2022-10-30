@@ -1,0 +1,56 @@
+.nav{
+    @include flex;
+
+    &__logo{
+        margin-right: 92px;
+        font-family: "Raleway";
+        font-weight: 700;
+        font-size: 26px;
+        line-height: 1.19;
+        letter-spacing: 0.03em;
+        color: $header-logo-color;
+
+        &--accent{
+            color: $accent-color;
+        }
+    }
+        
+
+    &__list{
+        @include flex($gap:50px);
+
+    }
+
+    &__item{
+        position: relative;
+        min-width: 48px;
+    }
+
+    &__link{
+        padding: 32px 0;
+        @include font(500, 14px, 16px, 0.02em, $black-text-color);
+        @include transition;
+        
+        &:hover,
+        &:focus{
+            color: $accent-color;
+        }
+        
+        &--current{
+            color: $accent-color;
+        }
+
+        &--current::after{
+            position: absolute;
+            display: flex;
+            content: "";
+            bottom: -1px;
+            left: 0;
+            height: 4px;
+            width: 100%;
+            border: 1px solid transparent;
+            border-radius: 2px;
+            background-color: $accent-color;
+        }
+    }
+}

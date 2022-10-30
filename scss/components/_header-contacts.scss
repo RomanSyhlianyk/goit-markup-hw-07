@@ -1,0 +1,25 @@
+.contacts{
+    margin-left: auto;
+    @include flex($gap:30px);
+
+    &__link{
+        @include flex($gap:10px);
+        @include font(500,14px,16px,0.02em,$grey-text-link);
+        
+        @include transition;
+        &:focus,
+        &:hover{
+            color: $accent-color;
+        }
+
+        &:hover .contacts__icon,
+        &:focus .contacts__icon{
+            fill: $accent-color;
+        }    
+    }
+
+    &__icon{
+        fill: $grey-text-link;
+        @include transition($tp:fill);
+    }
+}

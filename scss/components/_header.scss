@@ -1,0 +1,7 @@
+.header{
+    border-bottom: 1px solid $header-border-color;
+    @include flex;
+    &__row{
+        @include flex;
+    }
+}
